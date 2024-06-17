@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'Harseerat Khaira'
 theme = 'typo'
 
+publishDir = "docs"
+
 [taxonomies]
 tag = 'tags'
 
@@ -71,3 +73,4 @@ category = "General"
 categoryid = "categoryId"
 mapping = "pathname"
 theme = "preferred_color_scheme"
+
