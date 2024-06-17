@@ -21,8 +21,7 @@ theme = 'auto'
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-I am an Italian Software Engineer with a strong foundation in computer science and a passion for solving complex problems.
-I am interested in a range of topics, including algorithms, distributed systems, databases, and information retrieval.
+I am a mechanical engineering in training currently working as a mechanical consultant in the construction industry. This site will serve as a record of some projects and knowledgebase I develop through the years of work.
 """
 
 # Collection to display on home
@@ -73,4 +72,3 @@ category = "General"
 categoryid = "categoryId"
 mapping = "pathname"
 theme = "preferred_color_scheme"
-
