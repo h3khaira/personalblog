@@ -17,6 +17,7 @@ description = "An Engineering Blog"
 
 # Appearance settings
 theme = 'auto'
+#colorPalette = 'catpuccin'
 
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
