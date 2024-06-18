@@ -4,11 +4,11 @@
 
   <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width"><meta name="description" content="" />
+<meta name="viewport" content="width=device-width"><meta name="description" content="A writeup on the functionality of a radiant floor heating system." />
 
 <title>
     
-    RadiantHeating | Harseerat Khaira
+    Radiant Floor Heating Systems in GO Stations | Harseerat Khaira
     
 </title>
 
@@ -87,7 +87,7 @@
     <a href="/posts/">Posts</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/posts/radiantheating/">RadiantHeating</a>
+    <a class="breadcrumbs-current" href="/posts/radiantheating/">Radiant Floor Heating Systems in GO Stations</a>
 </div>
 
 
@@ -97,7 +97,7 @@
 
     
 
-    <h1 class="single-title">RadiantHeating</h1>
+    <h1 class="single-title">Radiant Floor Heating Systems in GO Stations</h1>
     
 
     
@@ -123,7 +123,26 @@
   
 
   <div class="single-content">
-    <p>$x^2$</p>
+    <h2 id="what-is-it">What is it?</h2>
+<p>According to the GO DRM, all conditioned spaces inside of a GO station must be heated by a radiant floor heating system. This includes spaces such as the ambassador office, washrooms, retail space etc. However, this does not include auxillary spaces such as mechanical or electrical rooms. For more detail, refer to DS-04.</p>
+<p>Now what is a radiant floor heating system? In summary: it consists of heating a space by circulating hot water through pipes embedded in the floor slab, thus raising the slab temperature. This heats the room in two ways:</p>
+<ol>
+<li>Natural convection</li>
+<li>Thermal radiation</li>
+</ol>
+<p>The system works to maintain the slab temperature at 37.5°C by circulating hot water through the loops.</p>
+<p>The specific Metrolinx requirements for a radiant floor heating system can be found <a href="https://www.gosite.ca/engineering_public/standard_drawings/Mechanical%20Drawings%20and%20Specs/23%2021%2012%20Hydronic%20Radiant%20Floor%20Heating%20System.pdf">here.</a></p>
+<h2 id="components">Components</h2>
+<p>There are several components that are common for all radiant floor heating systems.</p>
+<ol>
+<li>Boilers: Typically a system will consist of two boilers to heat the water circulating through the pipes. These boilers will be sized to ~65% of the total load so they can be staged on and off.</li>
+<li>Boiler pumps: We typically have one pump dedicated per boiler so that the water can be circulated through the boiler.</li>
+<li>Main loop pumps: Then we have the pumps that circulate hot water through the main loop. Typically, we will have N+1 redundancy for these pumps.</li>
+<li>Mixing valve: After the main loop pumps, we typically provide a mixing valve. This valve modulates to mix the supply and return side of the loops to maintain a specified loop temperature.</li>
+<li>Mixing header: Then we have a main header that will distribute piping to the manifolds located in each zone being served by the system.</li>
+<li>Manifold cabinets: Finally, we have manifold cabinets distributed throughout the system that distribute hot water through loop piping into the slabs. Each cabinet can serve multiple zones.</li>
+<li>Slab temperature sensors: As the name suggests, these sensors measure the slab temperature to allow for precise control of the system.</li>
+</ol>
 
     
   </div>

@@ -6,15 +6,8 @@
     <description>Recent content in Home on Harseerat Khaira</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2024 19:51:37 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2024 19:14:22 -0400</lastBuildDate>
     <atom:link href="https://harseeratkhaira.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Test</title>
-      <link>https://harseeratkhaira.com/posts/test/</link>
-      <pubDate>Mon, 17 Jun 2024 19:51:37 -0400</pubDate>
-      <guid>https://harseeratkhaira.com/posts/test/</guid>
-      <description></description>
-    </item>
     <item>
       <title>About</title>
       <link>https://harseeratkhaira.com/about/about/</link>
@@ -23,11 +16,11 @@
       <description>I graduated from the University of Waterloo in 2020 and have since been working in the construction industry. I worked at IBI group out of school, had a brief sting at The Mitchell Partnership, and now work at GHD full time.&#xA;Many of the projects I work on are in the rail and transit sector, designing train and bus stations. I have previously worked on projects such as the Broadway Subway Project in Vancouver, the Eglinton Crosstown LRT and the Ontario Line Exhibition Station.</description>
     </item>
     <item>
-      <title>RadiantHeating</title>
+      <title>Radiant Floor Heating Systems in GO Stations</title>
       <link>https://harseeratkhaira.com/posts/radiantheating/</link>
       <pubDate>Mon, 17 Jun 2024 19:09:49 -0400</pubDate>
       <guid>https://harseeratkhaira.com/posts/radiantheating/</guid>
-      <description>$x^2$</description>
+      <description>What is it? According to the GO DRM, all conditioned spaces inside of a GO station must be heated by a radiant floor heating system. This includes spaces such as the ambassador office, washrooms, retail space etc. However, this does not include auxillary spaces such as mechanical or electrical rooms. For more detail, refer to DS-04.&#xA;Now what is a radiant floor heating system? In summary: it consists of heating a space by circulating hot water through pipes embedded in the floor slab, thus raising the slab temperature.</description>
     </item>
   </channel>
 </rss>
