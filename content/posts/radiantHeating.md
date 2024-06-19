@@ -25,3 +25,11 @@ There are several components that are common for all radiant floor heating syste
 5. Mixing header: Then we have a main header that will distribute piping to the manifolds located in each zone being served by the system.
 6. Manifold cabinets: Finally, we have manifold cabinets distributed throughout the system that distribute hot water through loop piping into the slabs. Each cabinet can serve multiple zones.
 7. Slab temperature sensors: As the name suggests, these sensors measure the slab temperature to allow for precise control of the system.
+
+## Sequence of Operations
+The in-floor heating system is controlled using the building automation system. It behaves in the following way:
+1. If the outside temperature drops below 12&deg;C for more than 30 minutes, the system is brought online. If the temperature rises above 15&deg;C for more than 30 minutes, the system is brought offline.
+2. The primary pumps operate to circulate water through the boilers.
+3. The secondary pumps operate in conjunction with a three-way valve to regulate the return water temperature from the radiant floor heating loop in a linear fashion between 26.5&deg;C and 37.5&deg;C depending on the outdoor temperature.
+4. The control valves for each zone served by a manifold cabinet shall be regulated by each zone thermostat.
+5. Slab temperature sensors in the station shall monitor the slab temperature.
