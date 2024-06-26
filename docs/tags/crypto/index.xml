@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crypto on Harseerat Khaira</title>
+    <link>http://localhost:1313/tags/crypto/</link>
+    <description>Recent content in Crypto on Harseerat Khaira</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jun 2024 20:42:19 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saffron.Finance (SFI) and Other Crypto Oddities</title>
+      <link>http://localhost:1313/posts/saffron/</link>
+      <pubDate>Tue, 25 Jun 2024 20:42:19 -0400</pubDate>
+      <guid>http://localhost:1313/posts/saffron/</guid>
+      <description>Here I dive into what I read about the SFI token</description>
+    </item>
+  </channel>
+</rss>

@@ -4,11 +4,11 @@
 
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width"><meta name="description" content="Here I describe how I size emergency cooling exhaust fans." />
+<meta name="viewport" content="width=device-width"><meta name="description" content="Here I talk about the SFI token." />
 
 <title>
     
-    Sizing Emergency Cooling Exhaust Fans | Harseerat Khaira
+    Saffron.Finance (SFI) and Other Crypto Oddities | Harseerat Khaira
     
 </title>
 
@@ -82,7 +82,7 @@
     <a href="/posts/">Posts</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/posts/emergencycooling/">Sizing Emergency Cooling Exhaust Fans</a>
+    <a class="breadcrumbs-current" href="/posts/saffron/">Saffron.Finance (SFI) and Other Crypto Oddities</a>
 </div>
 
 
@@ -92,7 +92,9 @@
 
     
 
-    <h1 class="single-title">Sizing Emergency Cooling Exhaust Fans</h1>
+    <h1 class="single-title">Saffron.Finance (SFI) and Other Crypto Oddities</h1>
+    
+    <p class="single-summary">Here I dive into what I read about the SFI token</p>
     
 
     
@@ -101,12 +103,12 @@
       
       
       
-      <time datetime="2024-06-18T21:22:35-04:00">June 18, 2024</time>
+      <time datetime="2024-06-25T20:42:19-04:00">June 25, 2024</time>
       
 
       
       &nbsp; · &nbsp;
-      2 min read
+      1 min read
       
     </p>
 
@@ -121,20 +123,11 @@
   
 
   <div class="single-content">
-    <p>During my work I run into client requirements where the client requires an emergency ventilation system in a critical electrical or communication room. This system is meant to turn on when the main air conditioning system in this room becomes non-functional for whatever reason in the summer. Since these rooms tend to contain critical infrastructure, they must never be brought offline, which means the equipment is always generating heat.</p>
-<p>In this scenario, we don&rsquo;t want the room temperature to get too high while the A/C is being repaired. Therefore, we design an emergency cooling exhaust fan that replaces in the room air with outside air to keep the temperature at some reasonable setpoint.</p>
-<h2 id="calculation">Calculation</h2>
-<p>In order to size the emergency cooling exhaust fan, we need to know a few parameters:</p>
-<ol>
-<li>The heat dissapation in the room in Btu/hr. We will represent this with the symbol $Q$.</li>
-<li>The internal temperature setpoint. Typically we keep this around 38°C (100°F).  We represent this with the symbol T<del>i</del>.</li>
-<li>The external temperature. For this we go with the worst case scenario, which according to OBC is around 31°C in Toronto. We represent this with the symbol T<del>o</del></li>
-</ol>
-<p>With these factors determined, the airflow can be calculation in cubic foot per minute (CFM) according to the following formula:
-$$
-CFM [\frac{ft^3}{min}]= \frac{Q [\frac{Btu}{hr}]}{1.08(To [°F]-Ti[°F])}
-$$</p>
-<p>Equipped with this airflow, we can then proceed to size the exhaust fan to provide emergency cooling.</p>
+    <h2 id="intro-to-saffron">Intro to Saffron</h2>
+<p>Recently I became aware of a cryptocurrency called Saffron.Finance (SFI) running on the Ethereum chain that its website claims is a &ldquo;&hellip;peer to peer risk adjustment protocol. Users customize their risk and return profiles by selecting their own degree of exposure to underlying platforms.&rdquo;</p>
+<p>The project seems to be run by a person who goes by the psudonym &lsquo;Dingo&rsquo; and from initial appearances seems like a sophisticated cryptocurrency project with hefty ambitions. The website contains a <a href="https://gov.saffron.finance/">governance forum</a>, <a href="https://github.com/saffron-finance/saffron">a github page showing the source code</a> and what seems to be great documentation on its goals and intents. There is even a &ldquo;Saffron Academy Podcast&rdquo; where host Dingo interviews prominent cryptocurrency figures.</p>
+<h2 id="history">History</h2>
+<p>The first <a href="https://github.com/saffron-finance/saffron/commit/01daed0c4a8d589cc6f28c2a023bde5dd30d7b4c">commit</a> to the Saffron github was on October 9, 2020, deep into the pandemic era, when many people had stimulus checks hitting their bank accounts and were bored at home. This was when a huge crypto boom was occuring, and NFTs were all the hype (which are curiously nowhere to be found now). The first commit was by the token&rsquo;s founded &lsquo;psykeeper&rsquo;, whos last commit to the project was 3 years ago in January 2021.</p>
 
     
   </div>
