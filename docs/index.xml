@@ -6,8 +6,15 @@
     <description>Recent content in Home on Harseerat Khaira</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2024 19:14:22 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2024 21:22:35 -0400</lastBuildDate>
     <atom:link href="https://harseeratkhaira.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sizing Emergency Cooling Exhaust Fans</title>
+      <link>https://harseeratkhaira.com/posts/emergencycooling/</link>
+      <pubDate>Tue, 18 Jun 2024 21:22:35 -0400</pubDate>
+      <guid>https://harseeratkhaira.com/posts/emergencycooling/</guid>
+      <description>During my work I run into client requirements where the client requires an emergency ventilation system in a critical electrical or communication room. This system is meant to turn on when the main air conditioning system in this room becomes non-functional for whatever reason in the summer. Since these rooms tend to contain critical infrastructure, they must never be brought offline, which means the equipment is always generating heat.&#xA;In this scenario, we don&amp;rsquo;t want the room temperature to get too high while the A/C is being repaired.</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://harseeratkhaira.com/about/about/</link>
