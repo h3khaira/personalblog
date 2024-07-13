@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Finance on Harseerat Khaira</title>
-    <link>http://localhost:1313/tags/finance/</link>
+    <link>https://harseeratkhaira.com/tags/finance/</link>
     <description>Recent content in Finance on Harseerat Khaira</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Jun 2024 20:42:19 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://harseeratkhaira.com/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Saffron.Finance (SFI) and Other Crypto Oddities</title>
-      <link>http://localhost:1313/posts/saffron/</link>
+      <title>Saffron Meta Token (SMT) and Other Crypto Schemes</title>
+      <link>https://harseeratkhaira.com/posts/saffron/</link>
       <pubDate>Tue, 25 Jun 2024 20:42:19 -0400</pubDate>
-      <guid>http://localhost:1313/posts/saffron/</guid>
-      <description>Here I dive into what I found out after reading about the SFI token, which exhibits the same problem that seems to plague the cryptocurrency industry in general.</description>
+      <guid>https://harseeratkhaira.com/posts/saffron/</guid>
+      <description>Here I dive into what I found out after reading about the SMT token, which exhibits the same problem that seems to plague the cryptocurrency industry in general.</description>
     </item>
   </channel>
 </rss>

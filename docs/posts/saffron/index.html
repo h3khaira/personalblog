@@ -2,13 +2,13 @@
 <html lang="en-us"
   dir="ltr">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width"><meta name="description" content="Here I talk about the SFI token." />
+<meta name="viewport" content="width=device-width"><meta name="description" content="Here I talk about the SMT token." />
 
 <title>
     
-    Saffron.Finance (SFI) and A Post-Hype Crypto Project | Harseerat Khaira
+    Saffron Meta Token (SMT) and Other Crypto Schemes | Harseerat Khaira
     
 </title>
 
@@ -19,6 +19,11 @@
 
 
 <link rel="stylesheet" href="/assets/combined.min.f69b4a5b91a9bc416804eda1f19d04210551b843d47318bf1913d7edce1504fb.css" media="all">
+
+
+
+
+  
 
 
 
@@ -82,7 +87,7 @@
     <a href="/posts/">Posts</a>
     <span class="breadcrumbs-separator"> > </span>
     
-    <a class="breadcrumbs-current" href="/posts/saffron/">Saffron.Finance (SFI) and A Post-Hype Crypto Project</a>
+    <a class="breadcrumbs-current" href="/posts/saffron/">Saffron Meta Token (SMT) and Other Crypto Schemes</a>
 </div>
 
 
@@ -92,9 +97,9 @@
 
     
 
-    <h1 class="single-title">Saffron.Finance (SFI) and A Post-Hype Crypto Project</h1>
+    <h1 class="single-title">Saffron Meta Token (SMT) and Other Crypto Schemes</h1>
     
-    <p class="single-summary">Here I dive into what I found out after reading about the SFI token, which exhibits the same problem that seems to plague the cryptocurrency industry in general.</p>
+    <p class="single-summary">Here I dive into what I found out after reading about the SMT token, which exhibits the same problem that seems to plague the cryptocurrency industry in general.</p>
     
 
     
@@ -108,7 +113,7 @@
 
       
       &nbsp; · &nbsp;
-      9 min read
+      4 min read
       
     </p>
 
@@ -137,46 +142,52 @@
 <li>Hype dies down and the project is forgotten</li>
 </ul>
 <p>And throughout this whole experience, there is nothing of value generated, no use-case, no promises fullfilled; only that money has changed hands from some people to other people.</p>
-<h2 id="saffron">Saffron</h2>
-<p>Recently I became aware of a cryptocurrency called Saffron.Finance (SFI) running on the Ethereum chain that its website claims is a &ldquo;&hellip;peer to peer risk adjustment protocol. Users customize their risk and return profiles by selecting their own degree of exposure to underlying platforms.&rdquo;</p>
-<p>The project seems to be run by a person who goes by the psudonym &lsquo;Dingo&rsquo; and from initial appearances seems like a sophisticated cryptocurrency project with hefty ambitions. The website contains a <a href="https://gov.saffron.finance/">governance forum</a>, <a href="https://github.com/saffron-finance/saffron">a github page showing the source code</a> and what seems to be great documentation on its goals and intents. There is even a &ldquo;Saffron Academy Podcast&rdquo; where host Dingo interviews prominent cryptocurrency figures.</p>
-<p>The first <a href="https://github.com/saffron-finance/saffron/commit/01daed0c4a8d589cc6f28c2a023bde5dd30d7b4c">commit</a> to the Saffron github was on October 9, 2020, deep into the pandemic era, when many people had stimulus checks hitting their bank accounts and were bored at home. This was when a huge crypto boom was occuring, and NFTs were all the hype (which are curiously nowhere to be found now).</p>
-<p>The first commit was by the token&rsquo;s founded &lsquo;psykeeper&rsquo;, whos last commit to the project was 3 years ago in January 2021. There has been no development on the github repository since this last commit. At the time of writing this, SFI can currently be exchanged for $21.81 per token, there are currently 92,000 tokens in circulation.</p>
-<h2 id="the-whitepaper">The Whitepaper</h2>
-<p>The latest activity I can find for this token without joining their Telegram or Discord channels is an article posted by <em>Dingo</em> on Medium titled <a href="https://medium.com/saffron-finance/introducing-saffron-lido-vaults-b3ac6b529023">Introducing Saffron Lido Vaults</a> and a <a href="https://github.com/saffron-finance/papers/blob/main/SaffronFixedIncomeVault.pdf">whitepaper</a> released on Github. &lsquo;Whitepapers&rsquo; are used extensively in the crypto industry as promotional memos to present their product to potential investors. They also serve another purpose of giving the project some modicum of professionalism and legitimacy.</p>
-<p>The Saffron Finance whitepaper on first glance is an impressive piece of work. Written by authors <em>Rx3A97</em> and <em>Psy Keeper</em>, it clocks in at an impressive 17 pages complete with mathamatical formulas as well as citations.</p>
-<p>The whitepaper describes Saffron Finance&rsquo;s attempt at implementing a <em>zero-oupon swap</em> into their crypto ecosystem. According to <a href="https://www.investopedia.com/terms/z/zero-coupon-swap.asp">Investopedia</a> a &ldquo;.. zero-coupon swap is a derivative contract entered into by two parties. One party makes floating payments which changes according to the future publication of the interest rate index (e.g. LIBOR, EURIBOR, etc.) upon which the rate is benchmarked. The other party makes payments to the other based on an agreed fixed interest rate&rdquo;.</p>
-<p>The whitepaper attempts to explain how Saffron Finance will replicate a zero coupon swap with a smart contract and how this is a profitable strategy. Now I&rsquo;m not a financial professional so I will not attempt to decipher this strategy or the viability of it. However, there are some other things in the whitepaper that give me pause and are worth highlighting.</p>
-<p>The whitepaper has a <em>methods</em> section which is supposed to point the reader to how the authors arrived to their conclusions. However, the authors seemed to not have double checked what they wrote and/or are not expecting any investors to actually read the paper. his is what they have to say about their calculation script:</p>
-<blockquote>
-<p>Simulation of Saffron Fixed Income Vaults performance and calculations of study case</p>
-</blockquote>
-<blockquote>
-<p>To make all the simulations we build a simplified library that mimics the Saffron Fixed Income Vault operation called Dashi. The library is written in typescript and is available [URL ObservableHQ or NPM?]. These tow sections were coded in ObservableHQ Notebooks and canal so be accessed at <a href="https://observablehq.com/collection/@rx3a97/saffron-fixed-income-vault-paper">https://observablehq.com/collection/@rx3a97/saffron-fixed-income-vault-paper</a></p>
-</blockquote>
-<p>As you might have guessed, this URL leads to nothing and they forgot to delete the part where they debate whether the code should be hosted on NPM or observableHQ. That is not to say that this library does not exist, merely to point out the attention to detail that went into this whitepaper that seems to be several years in the making.</p>
-<p>One last thing I want to highlight in the whitepaper is the following sentence:</p>
-<blockquote>
-<p>Although the first implementations of the protocol lack some features described here, they could be prioritized and implemented upon request via governance.</p>
-</blockquote>
-<h2 id="governance">Governance</h2>
-<p>The Saffron Finance website contains a <a href="https://gov.saffron.finance/">governance</a> section where community members can pitch proposals for the direction of the project. Since the beginning of the project in April 2021, there have been a total of 22 posts to this forum, where users have pitched ideas such as <a href="https://gov.saffron.finance/t/binance-to-get-listing/96">a potential binance listing</a> (a platform that is now banned in ontario and whose founder took a plea deal and got 4 months in prison for money laundering) and granting the SFI foundation 250 SFI per quarter to conduct marketing for the chain.</p>
-<p>The most interesting proposal I found was to grant Dingo 20 SFI per quarter to conduct marketing activites. This proposal generated active discussion in the comments, where one user by the name of <em>rayraspberry</em> argues:</p>
-<blockquote>
-<p>80 SFI at $\1500/SFI is $120,000 which is 0.1% of the entire market cap per cycle. I don’t think anyone is expecting SFI to sit at $1500 for another year.</p>
-</blockquote>
-<p>He then goes on further to ask how Dingo&rsquo;s contract will be managed, who is responsible for additional expenses, how do they ensure the money is spent wisely. This discussed caused <em>Dingo</em> to close the discussion. Months later, in september, a second proposal was pitched now asking for 250 SFI per quarter (the price of SFI/USD had dropped by around 50% from all time highs at this point). This proposal passed by 100% yes and 0% no votes with 24 users participating where the top 2 voters are actually the same person under two different <a href="https://vote.saffron.finance/#/proposal/QmRDf9LAW1cDhjSM9CoXc8HjQcmsKgYtY8keGioptAJP2F">wallets</a>.</p>
-<p>None of these proposals contain anything substantial, they tend to receive very little engagement, and since votes are weighed based on the voters crypto porfolio, the whales tend to decide the end result of the proposal.</p>
-<h2 id="ghost-town">Ghost Town</h2>
-<p>Like many crypto projects, Saffron Finance is very devoid of any activity. The all time highs for this project occured in 2021, and since then it has been on a constant downward decline. This does not tend to lend well to engagement in the crypto space, where investors are on the hunt for <em>moonshots</em> and trying to ride the line up. The <a href="https://www.reddit.com/r/SaffronFinance/">reddit</a> page for Saffron Finance received its last post 3 years ago where a user asked an apt question: &ldquo;Why is the reddit page so dead?&rdquo;. The Safrron Finance reddit page is just one of hundreds if not thousands of other dead reddit pages in a graveyard of crypto projects. The marketing lead <em>Dingo</em> has his reddit account suspended for some unknown reason and there seems to be no admins for the page. Where did those 250 SFI per quarter for marketing dissapear off to?</p>
-<p>I also joined their discord page to see if anything exciting was happening there, but that also seems to be scarcely populated and lacks moderation. The welcome page of the discord features messages from NSFW bots pitching Onlyfans content and scammers trying to steal information from naive users. The latest post in the general page is from a blockchain developer looking for a job, who seems to have posted the same message in multiple channels.</p>
-<p>User @dishy on the discord posted in February 2024:</p>
-<blockquote>
-<p>@psykeeper , do you have any plans to change your style of running this project? It&rsquo;s clearly not working&hellip; apologies if that comes off a little harsh. marketing? changes to tokenomics? anything?</p>
-</blockquote>
-<p>Someone should tell dishy this ship has long sailed.</p>
-<h2 id="indodax">Indodax</h2>
-<p>The entity holding the most amount of SFI at 17% of the total supply is Indodax 3, an Indonesian crypto exchange who also owns more than $300 million worth of other tokens in its portfolio. The website of this exchange shows the <a href="https://indodax.com/market/SFIIDR">transactions</a> in SFI to Indonesian Rupiah. This leads me to conclude that this currency is quite popular in Indonesia.</p>
+<h2 id="saffron-meta-token">Saffron Meta Token</h2>
+<p>Now this brings me to a crypto token that I have been exploring recently named <a href="https://www.saffronmeta.com/#">Saffron Meta Token (SMT)</a> on the Polygon chain. What I find interesting about this token is its complete lack of information on what it is, what its aims are, what problem it solves and any other fundamental information a rational investor might want before buying into an investment.</p>
+<p>What it does offer is some lofty promises. For example; see the instagram post below where SMT claims to be an exchange.
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Instagram Post" src=" ./images/IG_Post_1.png">
+    </div>
+
+    
+</figure></p>
+<p>Now for the life of me I cannot figure out what this thing actually does, but it was featured at the Crypto Expo 2023 in Dubai so it must be legit.</p>
+<p>This token seems to be very specifically tagetted at indian expats living in Dubai, as is evident by the influencers they hire to promote their product. Its the sort of shady investment that specifically relies on obfuscation and confusion to lure in people looking for yield.</p>
+<p>I mean, why invest in a simple S&amp;P 500 index fund to earn measly ~10% return when you can potentially pitch into a crypto moonshot and become a trillionaire (is a question you should really not ask yourself)?
+
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Influencers" src=" ./images/influencers.png">
+    </div>
+
+    
+</figure></p>
+<p>Anyways, I tried finding where this token actually trades and found some very interesting transactions. This token has a total supply of 50,000,000 SMT with 1825 holders as of July 17, 2024, the highest of which holds 81% of the total supply (talk about decentralized!!). It has an impressive amount of market activity with 105,715 in total transfers and a market cap of an even more impressive zero dollars and zero cents. There are also some very interesting transactions on the chain as well. Take <a href="https://polygonscan.com/token/0xd9019c8c7a896e48da45487ae49827b9ea261391?a=0x4044a333c021a59b002c3802bc7642a4e5c69953">this transaction</a> for example. Where someone 3093 SMT in one transaction and takes out 3093 SMT in a subsequent two transactions. I wonder how many of the total trasctions are just a variation of this?</p>
+<p>I started off this little journey to try and make sense of this token I&rsquo;ve heard about from a family friend but I am ending this in profound confusion. As Warren Buffet advises investors, invest in business you understand and as I am now saying: stay away from obscure cryptocurrency projects.</p>
 
     
   </div>

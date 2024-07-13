@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HVAC on Harseerat Khaira</title>
-    <link>http://localhost:1313/tags/hvac/</link>
+    <link>https://harseeratkhaira.com/tags/hvac/</link>
     <description>Recent content in HVAC on Harseerat Khaira</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Jun 2024 21:22:35 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hvac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://harseeratkhaira.com/tags/hvac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sizing Emergency Cooling Exhaust Fans</title>
-      <link>http://localhost:1313/posts/emergencycooling/</link>
+      <link>https://harseeratkhaira.com/posts/emergencycooling/</link>
       <pubDate>Tue, 18 Jun 2024 21:22:35 -0400</pubDate>
-      <guid>http://localhost:1313/posts/emergencycooling/</guid>
+      <guid>https://harseeratkhaira.com/posts/emergencycooling/</guid>
       <description>During my work I run into client requirements where the client requires an emergency ventilation system in a critical electrical or communication room. This system is meant to turn on when the main air conditioning system in this room becomes non-functional for whatever reason in the summer. Since these rooms tend to contain critical infrastructure, they must never be brought offline, which means the equipment is always generating heat.&#xA;In this scenario, we don&amp;rsquo;t want the room temperature to get too high while the A/C is being repaired.</description>
     </item>
   </channel>
