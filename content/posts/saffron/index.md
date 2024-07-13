@@ -33,18 +33,26 @@ And throughout this whole experience, there is nothing of value generated, no us
 ## Saffron Meta Token
 Now this brings me to a crypto token that I have been exploring recently named [Saffron Meta Token (SMT)](https://www.saffronmeta.com/#) on the Polygon chain. What I find interesting about this token is its complete lack of information on what it is, what its aims are, what problem it solves and any other fundamental information a rational investor might want before buying into an investment. 
 
-What it does offer is some lofty promises. For example; see the instagram post below where SMT claims to be an exchange. 
 ![Instagram Post](./images/IG_Post_1.png)
 
-Now for the life of me I cannot figure out what this thing actually does, but it was featured at the Crypto Expo 2023 in Dubai so it must be legit.
+Now for the life of me I cannot figure out what this thing actually does, but it was featured at the Crypto Expo 2023 in Dubai so it must be legit. On their website they mention that:
+> Saffron Mount will soon introduce NFT and Metaverse in future which will emerge the idea to have prosperous life for Mankind. Join us! Let's change the world together 
 
-This token seems to be very specifically tagetted at indian expats living in Dubai, as is evident by the influencers they hire to promote their product. Its the sort of shady investment that specifically relies on obfuscation and confusion to lure in people looking for yield. 
+Translating this buzzword soup into something meaningful is a bit difficult, but I beleive they are aiming to add the Metaverse and NFTs (two profoundly dead fads) into their exchange.
+
+This token seems to be very specifically tagetted at indian expats living in Dubai (take one of many instagram reels posted by their account below), as is evident by the influencers they hire to promote their product. Its the sort of shady investment that specifically relies on obfuscation and confusion to lure in people looking for yield. 
 
 I mean, why invest in a simple S&P 500 index fund to earn measly ~10% return when you can potentially pitch into a crypto moonshot and become a trillionaire (is a question you should really not ask yourself)?
 ![Influencers](./images/influencers.png)
 
 Anyways, I tried finding where this token actually trades and found some very interesting transactions. This token has a total supply of 50,000,000 SMT with 1825 holders as of July 17, 2024, the highest of which holds 81% of the total supply (talk about decentralized!!). It has an impressive amount of market activity with 105,715 in total transfers and a market cap of an even more impressive zero dollars and zero cents. There are also some very interesting transactions on the chain as well. Take [this transaction](https://polygonscan.com/token/0xd9019c8c7a896e48da45487ae49827b9ea261391?a=0x4044a333c021a59b002c3802bc7642a4e5c69953) for example. Where someone 3093 SMT in one transaction and takes out 3093 SMT in a subsequent two transactions. I wonder how many of the total trasctions are just a variation of this?
 
-I started off this little journey to try and make sense of this token I've heard about from a family friend but I am ending this in profound confusion. As Warren Buffet advises investors, invest in business you understand and as I am now saying: stay away from obscure cryptocurrency projects.
+One other interesting thing about this token is that it has two seperate websites: [saffron mount](https://www.saffronmount.com/roadmap.html) and [saffron meta](https://www.saffronmeta.com/). I beleive one of those websites is for a cryptocurrency exchange and one of them is for a token but that is not very clear. What made me really suspicious about this whole this and convinced me this is some sort of MLM scheme is when I discovered there is an SMT "club" of insiders who get rewards based on how many SMT tokens they buy and how many other people they bring in. You can see an example of this below. 
+
+This sort of reward structure heavily incentivises people to pressure family and friends into joining, essentially providing liquidity into the chain and allowing older holders to cash out. Remember, this is a zero sum game. In order for someone who holds SMT to cash out, someone has to buy in with new cash. The millions of SMT tokens were generated out of thin air, they can only be laundered through actual cash injections. Now if you are confident you yourself or the SMT organization as a whole can swindle hundreds or thousands of other people to put in their hard earned money into magic money so that you can cash out with more money, then this is a great investment. 
+
+![SMT Club](./images/saffronClub.png)
+
+Otherwise, as Warren Buffet advises investors, invest in business you understand and as I am now saying: stay away from obscure cryptocurrency projects.
 
 
