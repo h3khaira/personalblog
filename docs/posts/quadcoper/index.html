@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width"><meta name="description" content="Here I go through a summary of the quadcopter controller I have been working on for a while. " />
+
+<title>
+    
+    Quadcoper | Harseerat Khaira
+    
+</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.f69b4a5b91a9bc416804eda1f19d04210551b843d47318bf1913d7edce1504fb.css" media="all">
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+    <h1 class="header-title">Harseerat Khaira</h1>
+
+    <div class="flex">
+        
+
+        
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/posts">
+                /posts
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/about">
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+</div>
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/quadcoper/">Quadcoper</a>
+</div>
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Quadcoper</h1>
+    
+    <p class="single-summary">A drone flight controller using the STM32F103 Blue Pill. This project is heavily influenced by Joop Brokking.</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-07-17T18:06:02-04:00">July 17, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      6 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>A drone flight controller using the STM32F103 Blue Pill. This project is heavily influenced by Joop Brokking, whose project can be found here <a href="https://www.youtube.com/watch?v=MLEQk73zJoU&amp;t=51s">on his youtube channel.</a></p>
+<h1 id="components">Components</h1>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="drone picture" src=" ./images/drone.jpg">
+    </div>
+
+    
+</figure></p>
+<p>This drone uses a generic F450 drone frame as the main platform. The motors are four (4) 1000 KV rated motors from aliexpress.</p>
+<p>The brain of the drone is the STM32F103 &ldquo;Blue pill&rdquo; controller pictured above. The drone also uses a generic MPU6050 module for its orientation measurements. The drone also uses some LEDs for error signals as well as a generic SSD1306 OLED display module. A summary of the components for this drone are listed below.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Controller</td>
+<td>STM32F103C8T6 &lsquo;Blue Pill&rsquo;</td>
+</tr>
+<tr>
+<td>IMU</td>
+<td>MPU-6050</td>
+</tr>
+<tr>
+<td>Frame</td>
+<td>F-450 Generic</td>
+</tr>
+<tr>
+<td>Motors</td>
+<td>QWinOut 1000 KV motors</td>
+</tr>
+<tr>
+<td>Speed Controller</td>
+<td>Generic 30A Electronic Speed Controller</td>
+</tr>
+<tr>
+<td>Battery</td>
+<td>Generic 3 cell lipo battery</td>
+</tr>
+<tr>
+<td>OLED Display</td>
+<td>SSD1306 OLED Display Modules</td>
+</tr>
+<tr>
+<td>Transmitter/Receiver</td>
+<td>Hobby King 2.4 GHz HK T6A V2 6-channel transmitter</td>
+</tr>
+</tbody>
+</table>
+<h1 id="development-platform">Development Platform</h1>
+<p>I decided to use platformIO for developing the code for this project, with the arduino and stm32duino tools. The platfomio.ini content I used is listed below.</p>
+<p>By default the blue pill boards require a debugger such as an ST-LINK for flashing and debugging. However, there is luckily a bootloader available that allows for flashing and debugging using the USB serial ports like a standard Arduino.</p>
+<pre tabindex="0"><code>[env:bluepill_f103c8]
+platform = ststm32
+board = bluepill_f103c8
+upload_protocol = hid
+upload_port = /dev/ttyACM0
+framework = arduino
+monitor_speed = 57600
+board_build.core = stm32duino
+build_flags =
+	-D PIO_FRAMEWORK_ARDUINO_ENABLE_CDC
+	-D USBCON
+	-D USBD_VID=0x0483
+	-D USBD_PID=0x5740
+	-D USB_MANUFACTURER=&#34;Unkown&#34;
+	-D USB_PRODUCT=&#34;\&#34;BLUEPILL_F103C8\&#34;&#34;
+	-D HAL_PCD_MODULE_ENABLED
+monitor_dtr = 1
+lib_deps =
+	adafruit/Adafruit GFX Library@^1.11.5
+	adafruit/Adafruit SSD1306@^2.5.7
+</code></pre><h1 id="hardware-interaction">Hardware Interaction</h1>
+<h2 id="mpu-6050-imu">MPU-6050 IMU</h2>
+<p>Communication to the MPU-6050 module is done using the following code snippet:</p>
+<pre tabindex="0"><code>  void startGyro()
+{
+  Wire1.beginTransmission(gyroAddress);
+  Wire1.write(0x6B); // power management register
+  Wire1.write(0x00); // setting this bit wakes up the MPU-6050 module
+  Wire1.endTransmission();
+
+  Wire1.beginTransmission(gyroAddress);
+  Wire1.write(0x1B); // Access the GYRO_CONFIG register
+  Wire1.write(0x08); // Write the FS_SEL bits to change gyro resolution to 500 degrees per second, 1 DEG/SEC  = 65.5 OUTPUT FROM GYRO LSB (check page 31 of manual)
+  Wire1.endTransmission();
+
+  Wire1.beginTransmission(gyroAddress);
+  Wire1.write(0x1C); // Access accelerometer config register
+  Wire1.write(0x10); // Set the AFSL bit +-8g = 4096 LSB/g
+  Wire1.endTransmission();
+
+  Wire1.beginTransmission(gyroAddress);
+  Wire1.write(0x1A); // Access CONFIG register
+  Wire1.write(0x03); // Digial Low Pass Filter for gyro/accelorometer set to 43 Hz
+  Wire1.endTransmission();
+}
+</code></pre><p>The I2C address for this module is 0x68. Arduino contains the library &ldquo;twowire&rdquo; for I2C communication, which we use to interact with the data registers of MPU-6050. The register map for the MPU-6050 can be found <a href="https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf">here</a>
+We first, wake up the MPU-6050 module, configure the resolution of the gyroscope and accelerometer measurements, and apply the in-built digital low pass filter to reduce the noise in the measurements.</p>
+<h2 id="hardware-timers-pulse-width-modulation-interrupts-and-working-with-receivers">Hardware Timers, Pulse Width Modulation, Interrupts and Working with Receivers</h2>
+<p>In order to interact with the motors and receivers with the stm32, we need to work with the hardware timers included on this board. The stm32 board has four (4) hardware timers built-in.</p>
+<p>The stm32 has a main clock speed of 72 MHz, so we set the prescaler value to 72 to allow our timers to reset at 1 MHz.</p>
+<p>Looking at the register map for STM32, we can see that timers TIM2 to TIM8 are general purpose timers, so we will be using those timers for our use-case. These timers can be used to either capture input pulse lengths, or to output pulses of specified length.</p>
+<p>We know that the receiver outputs signals in terms of pulse lengths. We also know that motor speed control is achieved through pulse length modulation. Therefore, this is the perfect use case for hardware timers. We initialize timer 2 and timer 3 for handling the receiver inputs, and timer 4 to serve as the PWM output to control the motors.</p>
+<h3 id="receiver-interrupts">Receiver Interrupts</h3>
+<p>The receiver pins are connected to pins A0 to A3 and A6, A7 on the blue pill. The blue pill pinout diagram shows that A0 to A3 are connected to hardware timer 2 and pins A6 and A7 are connected to timer 3. We will utilize the input capture mode on these timers to detect when the receiver sends a pulse into each pin and generate an interrupt.</p>
+<p>The input capture mode works by using the CCLR register to detect rise and falling edges of a pulse. For each time a falling/rising edge is detected, the capture compare register CCR1 is populated by the value of the counter register CNT. An interrupt is then generated through the DIER register which can be handled by an interrupt handler. By comparing the time between the rising and falling edges, the length of the pulse can be determined. This pulse length represents the states of the throttle, pitch/roll level, etc on the transmitter.</p>
+<p>The setting of registers in C++ is done using the following code as an example:</p>
+<pre tabindex="0"><code>  TIM3-&gt;DIER = TIM_DIER_CC1IE | TIM_DIER_CC2IE; // capture/compare 1,2 interrupt enable
+</code></pre><p>In this case, the CC1IE and CC2IE bits are set in the DIER register to enable the interrupt.</p>
+<h3 id="controlling-motor-speeds">Controlling Motor Speeds</h3>
+<p>The motor speed is controlled by sending the electronic speed controller a square pulse of a length between 1000-2000 microseconds, where 1000 microseconds indicates 0% speed and 2000 indicates 100% speed. Before the motors can be controlled, they need to be initialized by sending them a pulse of 1000 microseconds after power on. Without a microcontroller, this is done by moving the throttle into a &ldquo;0&rdquo; position. We will do so by sending each motor one pulse of 1000 microseconds at the start of our program.</p>
+<p>The motors are connected to pins B6-B9, which are dedicated to Timer 4 channels 1-4. Therefore, we will need to set up this timer for us to interact with these motors. We will set these pins up in &ldquo;PWM&rdquo; mode according to the STM32 manual. This is done by setting the OCM bits according to the following code:</p>
+<pre tabindex="0"><code>  TIM4-&gt;CCMR1 = 0b0110100001101000;// setting OC2M and OC1M bits to 110, also setting OC2PE and OC1PE bits to 1
+  TIM4-&gt;CCMR2 = 0b0110100001101000;
+</code></pre><p>We can then directly indicate the length of pulse we want to send to each motor. For instance; the code snippet below shows how to initialize all four motors by sending a 1000 microsecond pulse.</p>
+<pre tabindex="0"><code>  TIM4-&gt;CCR1 = 1000; // register value here determines the pulse length, a 1000 microsecond length here initializes the motors
+  TIM4-&gt;CCR2 = 1000;
+  TIM4-&gt;CCR3 = 1000;
+  TIM4-&gt;CCR4 = 1000;
+</code></pre><h1 id="controller">Controller</h1>
+<p>A quadrocopter is inherently an unstable system. Without some form of active control it cannot fly, as even a tiny deviation in the system such as one motor being slightly faster than the other cause the device to crash. Therefore, we need to provide active management of the inputs into the motors. We can do this by using a PID controller.</p>
+<p>The idea is that we take the measurements coming in from our IMU (the MPU6050 module), do some math with them, incorporate them with the input coming in from the transmitter/receiver (and therefore the pilot) and then provide inputs to each motor to achieve the desired effect.</p>
+
+    
+  </div>
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+
+    </footer>
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>
