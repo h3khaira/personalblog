@@ -1,5 +1,5 @@
 +++
-title = 'Quadcoper'
+title = 'The STM32 Blue Pill DIY Quadcoper'
 date = 2024-07-17T18:06:02-04:00
 draft = false
 summary = "A drone flight controller using the STM32F103 Blue Pill. This project is heavily influenced by Joop Brokking."

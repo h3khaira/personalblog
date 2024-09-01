@@ -2,38 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Harseerat Khaira</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://harseeratkhaira.com/posts/</link>
     <description>Recent content in Posts on Harseerat Khaira</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jul 2024 18:06:02 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Sep 2024 13:30:39 -0400</lastBuildDate>
+    <atom:link href="https://harseeratkhaira.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quadcoper</title>
-      <link>http://localhost:1313/posts/quadcoper/</link>
+      <title>How to use Platform.io to program and debug STM32F103C8T6 Blue Pill Development board over USB</title>
+      <link>https://harseeratkhaira.com/posts/flashing/</link>
+      <pubDate>Sun, 01 Sep 2024 13:30:39 -0400</pubDate>
+      <guid>https://harseeratkhaira.com/posts/flashing/</guid>
+      <description>Here I explain how I got the stm32 clone I got off of aliexpress working with PlatformIO</description>
+    </item>
+    <item>
+      <title>The STM32 Blue Pill DIY Quadcoper</title>
+      <link>https://harseeratkhaira.com/posts/quadcoper/</link>
       <pubDate>Wed, 17 Jul 2024 18:06:02 -0400</pubDate>
-      <guid>http://localhost:1313/posts/quadcoper/</guid>
+      <guid>https://harseeratkhaira.com/posts/quadcoper/</guid>
       <description>A drone flight controller using the STM32F103 Blue Pill. This project is heavily influenced by Joop Brokking.</description>
     </item>
     <item>
       <title>Saffron Meta Token (SMT) and Other Crypto Schemes</title>
-      <link>http://localhost:1313/posts/saffron/</link>
+      <link>https://harseeratkhaira.com/posts/saffron/</link>
       <pubDate>Tue, 25 Jun 2024 20:42:19 -0400</pubDate>
-      <guid>http://localhost:1313/posts/saffron/</guid>
+      <guid>https://harseeratkhaira.com/posts/saffron/</guid>
       <description>Here I dive into what I found out after reading about the SMT token, which exhibits the same problem that seems to plague the cryptocurrency industry in general.</description>
     </item>
     <item>
       <title>Sizing Emergency Cooling Exhaust Fans</title>
-      <link>http://localhost:1313/posts/emergencycooling/</link>
+      <link>https://harseeratkhaira.com/posts/emergencycooling/</link>
       <pubDate>Tue, 18 Jun 2024 21:22:35 -0400</pubDate>
-      <guid>http://localhost:1313/posts/emergencycooling/</guid>
+      <guid>https://harseeratkhaira.com/posts/emergencycooling/</guid>
       <description>During my work I run into client requirements where the client requires an emergency ventilation system in a critical electrical or communication room. This system is meant to turn on when the main air conditioning system in this room becomes non-functional for whatever reason in the summer. Since these rooms tend to contain critical infrastructure, they must never be brought offline, which means the equipment is always generating heat.&#xA;In this scenario, we don&amp;rsquo;t want the room temperature to get too high while the A/C is being repaired.</description>
     </item>
     <item>
       <title>Radiant Floor Heating Systems in GO Stations</title>
-      <link>http://localhost:1313/posts/radiantheating/</link>
+      <link>https://harseeratkhaira.com/posts/radiantheating/</link>
       <pubDate>Mon, 17 Jun 2024 19:09:49 -0400</pubDate>
-      <guid>http://localhost:1313/posts/radiantheating/</guid>
+      <guid>https://harseeratkhaira.com/posts/radiantheating/</guid>
       <description>What is it? According to the GO DRM, all conditioned spaces inside of a GO station must be heated by a radiant floor heating system. This includes spaces such as the ambassador office, washrooms, retail space etc. However, this does not include auxillary spaces such as mechanical or electrical rooms. For more detail, refer to DS-04.&#xA;Now what is a radiant floor heating system? In summary: it consists of heating a space by circulating hot water through pipes embedded in the floor slab, thus raising the slab temperature.</description>
     </item>
   </channel>

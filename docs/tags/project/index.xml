@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project on Harseerat Khaira</title>
-    <link>http://localhost:1313/tags/project/</link>
+    <link>https://harseeratkhaira.com/tags/project/</link>
     <description>Recent content in Project on Harseerat Khaira</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Jul 2024 18:06:02 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://harseeratkhaira.com/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quadcoper</title>
-      <link>http://localhost:1313/posts/quadcoper/</link>
+      <title>The STM32 Blue Pill DIY Quadcoper</title>
+      <link>https://harseeratkhaira.com/posts/quadcoper/</link>
       <pubDate>Wed, 17 Jul 2024 18:06:02 -0400</pubDate>
-      <guid>http://localhost:1313/posts/quadcoper/</guid>
-      <description></description>
+      <guid>https://harseeratkhaira.com/posts/quadcoper/</guid>
+      <description>A drone flight controller using the STM32F103 Blue Pill. This project is heavily influenced by Joop Brokking.</description>
     </item>
   </channel>
 </rss>

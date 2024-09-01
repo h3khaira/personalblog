@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width"><meta name="description" content=" " />
+
+<title>
+    
+    How to use Platform.io to program and debug STM32F103C8T6 Blue Pill Development board over USB | Harseerat Khaira
+    
+</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.f69b4a5b91a9bc416804eda1f19d04210551b843d47318bf1913d7edce1504fb.css" media="all">
+
+
+
+
+  
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+    <h1 class="header-title">Harseerat Khaira</h1>
+
+    <div class="flex">
+        
+
+        
+        
+        <p class="small ">
+            <a href="/">
+                /home
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/posts">
+                /posts
+            </a>
+        </p>
+        
+        <p class="small ">
+            <a href="/about">
+                /about
+            </a>
+        </p>
+        
+        
+    </div>
+
+</div>
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/flashing/">How to use Platform.io to program and debug STM32F103C8T6 Blue Pill Development board over USB</a>
+</div>
+
+
+<div  class="autonumber" >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">How to use Platform.io to program and debug STM32F103C8T6 Blue Pill Development board over USB</h1>
+    
+    <p class="single-summary">Here I explain how I got the stm32 clone I got off of aliexpress working with PlatformIO</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-09-01T13:30:39-04:00">September 1, 2024</time>
+      
+
+      
+      &nbsp; · &nbsp;
+      3 min read
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <p>The STM32F103C8T6 Blue Pill development board is a powerful alternative to a standard Arduino board such as the Arduino Uno. It is equipped with a powerful 32-bit Arm processesor that is leagues ahead of the ATmega 8-bit processors in an Arduino Uno. This is one of the main reasons I decided to use a Blue Pill board for my drone flight controller project. However, I quickly realized the relative difficulty of setting up a development environment for this board to allow for easy upload of code and debugging.</p>
+<p>So I have written this article to summarize what I&rsquo;ve learned and help anyone else going through the same process. In this article I will go through how to set up a development environment for the Blue Pill in platform.io. Here&rsquo;s what we will need:</p>
+<ol>
+<li>An STM32F103C8T6 Blue Pill development board</li>
+<li>A mini USB cable</li>
+<li>An ST-LINK/V2 debugger and programmer</li>
+<li>4 x jumper cables</li>
+</ol>
+<p>Firstly, we need to flash the HID bootloader on the board to enable us to upload code through USB as well as debugging through the serial monitor. For this, we will need the STM32 Cube Programmer, which can be downloaded from here. In addition, we also need the bootloader binaries, which can be downloaded from the github repository found here. Download the folder labeled as &ldquo;stm32_binaries.zip&rdquo; and unzip this folder.</p>
+<p>Once the STM32 cube programmer is installed, connect the Blue Pill to your computer via the ST-LINK/V2. Use jumper cables to connect the SWDIO, SWDCK, 3v and ground pins on the ST-LINK/V2 to the Blue Pill. Within the cube programmer, navigate to the HID bootloader binary that applies to your specific board. For my board the binary file was located in /stm32_binaries/F103/low_and_medium_density/hid_generic_pc13.bin. Before flashing the bootloader, ensure that the BOOT0 jumper on the board is set to &ldquo;1&rdquo; as shown in the image below. Once this is done, flash this binary on the Blue Pill and move the BOOT0 jumper back to the &ldquo;0&rdquo; position, then press the reset button. The built in LED on the board (marked below) should start rapidly blinking if this is successfull. You can now unplug the ST-LINK/V2 from the board.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+
+    <div>
+        <img loading="lazy" alt="Blue Pill" src=" ./images/bluePill.png">
+    </div>
+
+    
+</figure></p>
+<p>This bootloader enables you to upload code and debug through the serial monitor on the Blue Pill, eliminating the need to use an ST-LINK/V2. However, there are some special settings in Platform.io we need to use for this to work. Below is what my platform.ini configuration file looks like using the arduino framework on the Blue Pill. Ensure that you use the same build flags in your configuration, otherwise the bootloader will be wiped after uploading code and you will have to re-flash it on the board. Additionally, you might need to change the upload_port option depending on your setup.</p>
+<pre tabindex="0"><code>[env:bluepill_f103c8]
+platform = ststm32
+board = bluepill_f103c8
+upload_protocol = hid
+upload_port = /dev/ttyACM0
+framework = arduino
+monitor_speed = 57600
+board_build.core = stm32duino
+build_flags = 
+	-D PIO_FRAMEWORK_ARDUINO_ENABLE_CDC
+	-D USBCON
+	-D USBD_VID=0x0483
+	-D USBD_PID=0x5740
+	-D USB_MANUFACTURER=&#34;Unkown&#34;
+	-D USB_PRODUCT=&#34;\&#34;BLUEPILL_F103C8\&#34;&#34;
+	-D HAL_PCD_MODULE_ENABLED
+monitor_dtr = 1
+</code></pre><p>If you get the following error: <strong>hid-flash not found</strong> while trying to upload the program to the board, you can easily solve this by getting the appropriate hid-flash binary from the bootloader <a href="https://github.com/Serasidis/STM32_HID_Bootloader/releases">here</a>. and placing it in the <code>~/.platformio/packages/tool-stm32duino</code> directory.</p>
+<p>You might also face issues with uploading the program to the <code>/dev/ttyACM0</code> port due to permissions issues. In this case, simply add your user to the &ldquo;dialout&rdquo; group by running the command <code>sudo adduser $USER dialout</code> and rebooting.</p>
+<p>Finally, you also need to add permissions to <code>/etc/udev/rules.d/99-stm32_hid_b1.rules</code> below. If the file does not exist, create it.</p>
+<pre tabindex="0"><code># STM32_HID_bootloader
+ATTRS{idProduct}==&#34;beba&#34;, ATTRS{idVendor}==&#34;1209&#34;, MODE:=&#34;666&#34;
+</code></pre><p>After doing this reboot the computer or run <code>udevadm control --reload-rules</code> and uplug and plug the device back in and everything should be working.</p>
+
+    
+  </div>
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <p>Powered by
+    <a href="https://gohugo.io/">Hugo</a>
+    and
+    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+</p>
+
+
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  });
+</script>
+
+    </footer>
+
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>
