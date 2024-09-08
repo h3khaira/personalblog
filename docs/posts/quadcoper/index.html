@@ -23,9 +23,6 @@
 
 
 
-  
-
-
 
   </head>
 
@@ -152,46 +149,46 @@
 <p>This drone uses a generic F450 drone frame as the main platform. The motors are four (4) 1000 KV rated motors from aliexpress.</p>
 <p>The brain of the drone is the STM32F103 &ldquo;Blue pill&rdquo; controller pictured above. The drone also uses a generic MPU6050 module for its orientation measurements. The drone also uses some LEDs for error signals as well as a generic SSD1306 OLED display module. A summary of the components for this drone are listed below.</p>
 <table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Controller</td>
-<td>STM32F103C8T6 &lsquo;Blue Pill&rsquo;</td>
-</tr>
-<tr>
-<td>IMU</td>
-<td>MPU-6050</td>
-</tr>
-<tr>
-<td>Frame</td>
-<td>F-450 Generic</td>
-</tr>
-<tr>
-<td>Motors</td>
-<td>QWinOut 1000 KV motors</td>
-</tr>
-<tr>
-<td>Speed Controller</td>
-<td>Generic 30A Electronic Speed Controller</td>
-</tr>
-<tr>
-<td>Battery</td>
-<td>Generic 3 cell lipo battery</td>
-</tr>
-<tr>
-<td>OLED Display</td>
-<td>SSD1306 OLED Display Modules</td>
-</tr>
-<tr>
-<td>Transmitter/Receiver</td>
-<td>Hobby King 2.4 GHz HK T6A V2 6-channel transmitter</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Item</th>
+          <th style="text-align: left">Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Controller</td>
+          <td style="text-align: left">STM32F103C8T6 &lsquo;Blue Pill&rsquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IMU</td>
+          <td style="text-align: left">MPU-6050</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Frame</td>
+          <td style="text-align: left">F-450 Generic</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Motors</td>
+          <td style="text-align: left">QWinOut 1000 KV motors</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Speed Controller</td>
+          <td style="text-align: left">Generic 30A Electronic Speed Controller</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Battery</td>
+          <td style="text-align: left">Generic 3 cell lipo battery</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">OLED Display</td>
+          <td style="text-align: left">SSD1306 OLED Display Modules</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Transmitter/Receiver</td>
+          <td style="text-align: left">Hobby King 2.4 GHz HK T6A V2 6-channel transmitter</td>
+      </tr>
+  </tbody>
 </table>
 <h1 id="development-platform">Development Platform</h1>
 <p>I decided to use platformIO for developing the code for this project, with the arduino and stm32duino tools. The platfomio.ini content I used is listed below.</p>

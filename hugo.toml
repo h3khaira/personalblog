@@ -22,7 +22,7 @@ theme = 'auto'
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-I am a mechanical engineering in training currently working as a mechanical consultant in the construction industry. This site will serve as a record of some projects and knowledgebase I develop through the years of work.
+I am a mechanical engineer in training currently working at GHD in the building mechanical department focusing on rail and transit buildings. This site will serve as a record of some projects and knowledgebase I develop through the years of work.
 """
 
 # Collection to display on home
