@@ -1,5 +1,5 @@
 +++
-title ='Highway 410 is a Disaster and I dont See a Light at the End of the Tunnel'
+title ='Highway 410 is a Disaster and I Dont See a Light at the End of the Tunnel'
 date = 2025-09-24T19:47:47-04:00
 draft = false
 summary = "Here I rant about my work commute as it drains my life"
@@ -33,13 +33,13 @@ Now you might say: "Harseerat, theres an HOV lane! Why dont you get an HOV pass 
 - No one follows the HOV rules anyways and they dont get enforced! Most people I see in the HOV lane are solo drivers and there is no way all of them have a pass
 - Life as a commuter is hard and I try to find what little joy I can in changing lanes back and forth and imagining I am making progress. Sorta like sisyphus if he was a brown guy from Brampton
 
-### Why not take transit?
+### Why Not Take Transit?
 
 As someone who works on designing transit stations, I would love to not have to take my car and just take a bus or a train to work. But as you can see below given the state of things in Canada and the lack of transit options, its about a 2 hour journey home and requires transferring 4 different bus routes. 
 
 ![google maps directions for bus](./images/scrn.png "Taking the Bus From Work")
 
-### Highway 413 is going to solve everything
+### Highway 413 is Going to Solve Everything
 
 No its not. Maybe it will temporary divert some traffic when it gets built in the next decade or so, however as anyone familiar with [induced demand](https://en.wikipedia.org/wiki/Induced_demand) will tell you, its a matter of time before things get back to how they were. 
 
