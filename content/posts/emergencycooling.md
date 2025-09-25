@@ -2,15 +2,14 @@
 title = 'Sizing Emergency Cooling Exhaust Fans'
 date = 2024-06-18T21:22:35-04:00
 draft = false
-description = "Here I describe how I size emergency cooling exhaust fans."
-toc = false
+summary = "Here I describe how I size emergency cooling exhaust fans."
 readTime = true
 math = true
 tags = ["mini-hub", "HVAC", "emergency cooling"]
 showTags = false
 hideBackToTop = false
 +++
-During my work I run into client requirements where the client requires an emergency ventilation system in a critical electrical or communication room. This system is meant to turn on when the main air conditioning system in this room becomes non-functional for whatever reason in the summer. Since these rooms tend to contain critical infrastructure, they must never be brought offline, which means the equipment is always generating heat.
+During my work I frequently run into client requirements where the client requires an emergency ventilation system in a critical electrical or communication room. This system is meant to turn on when the main air conditioning system in this room becomes non-functional for whatever reason in the summer. Since these rooms tend to contain critical infrastructure, they must never be brought offline, which means the equipment is always generating heat.
 
 In this scenario, we don't want the room temperature to get too high while the A/C is being repaired. Therefore, we design an emergency cooling exhaust fan that replaces in the room air with outside air to keep the temperature at some reasonable setpoint. 
 
